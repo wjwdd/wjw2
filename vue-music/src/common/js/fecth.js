@@ -17,8 +17,10 @@ export function fetch(options) {
       .then(response => { //then 请求成功之后进行什么操作
 
         resolve(response); //把请求到的数据发到引用请求的地方
+        setTimeout(()=>{
+          Loading.close();
 
-        Loading.close();
+        },1000)
 
       })
       .catch(error => {
