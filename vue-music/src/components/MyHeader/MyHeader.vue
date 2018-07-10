@@ -1,7 +1,7 @@
 <template>
   <div class="my-header">
     <div class="icon"></div>
-    <h1 class="text" @click="back">Chicken Music</h1>
+    <h1 class="text" @click="back">Chicken Music1</h1>
 
     <!-- 个人中心 -->
     <router-link to="/user" class="mine" tag="div">
