@@ -11,6 +11,7 @@ import 'common/js/rem.js'
 import axios from 'axios'; //引入文件
 //vuex
 import store from './store'
+
 Vue.prototype.$http = axios; //将axios挂载到Vue实例中的$ajax上面,在项目中的任何位置通过this.$http使用
 Vue.use(YDUI);
 fastclick.attach(document.body)
@@ -25,7 +26,7 @@ const vue=new Vue({
 })
 // 全局路由守卫
 router.beforeEach((to, from, next) => {
-  vue.$store.dispatch('switch_dialog')
+  // vue.$store.dispatch('switch_dialog')
   // to: Route: 即将要进入的目标 路由对象
   // from: Route: 当前导航正要离开的路由
   // next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
@@ -37,7 +38,7 @@ router.beforeEach((to, from, next) => {
 });
 router.afterEach((to, from, next) => {
   setTimeout(function(){
-  	 vue.$store.dispatch('switch_dialog1')
+  	 // vue.$store.dispatch('switch_dialog1')
   })
   
 });

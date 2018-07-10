@@ -1,5 +1,4 @@
 <template>
-
 	<div class="my-singer" >
 		<div>
 	       	<yd-button @click.native="hahah" type="primary">primary</yd-button>
@@ -7,26 +6,22 @@
 	        <yd-button  @click.native="hahah2" size="large" type="warning">warning</yd-button>
 	        <yd-button  size="large" type="disabled" disabled>disabled</yd-button>
 	        <yd-button @click.native="sdsd" size="large" type="hollow">hollow</yd-button>
-	        <yd-button size="large" bgcolor="#000" color="#FFF">Custom Color</yd-button>
-			<div  class="singerid">{{id}}</div>
+	        <yd-button @click.native="sdsd1" size="large" bgcolor="#000" color="#FFF">Custom Color</yd-button>
+			<div class="singerid">{{id}}</div>
 			<div v-text="'getters:'+not_show"></div>
 			<div>{{'State:'+show}}</div>
 	    </div>
 	    <keep-alive>
     		<router-view v-on:childByValue="childByValue"></router-view>
  		</keep-alive>
-		
 	</div>
 </template>
 
 <script>
-import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import {mapActions,mapMutations,mapGetters,mapState} from 'vuex';
 
 export default {
-	components: {
-	    PulseLoader
-	},
+	
 	data(){
 		return{
 			id:0,
@@ -69,7 +64,11 @@ export default {
 	    sdsd(){
 	    	this.switch_dialog()
 	    },
-	    ...mapActions(['switch_dialog']),
+	    sdsd1(){
+	    	alert(11)
+	    	this.switch_dialog1()
+	    },
+	    ...mapActions(['switch_dialog','switch_dialog1']),
         // ...mapMutations(['switch_dialog'])
 	}
 }

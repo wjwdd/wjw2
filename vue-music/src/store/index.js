@@ -29,6 +29,8 @@ export default new vuex.Store({//store对象
             //你还可以在这里触发其他的mutations方法
         },
         switch_dialog1(context){//这里的context和我们使用的$store拥有相同的对象和方法
+            console.log('关闭')
+
             context.commit('switch_dialog1');
             //你还可以在这里触发其他的mutations方法
         },

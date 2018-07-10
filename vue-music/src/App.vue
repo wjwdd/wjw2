@@ -19,6 +19,7 @@ import MyHeader from './components/MyHeader/MyHeader'
 import MyTab from './components/MyTab/MyTab'
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import {mapState} from 'vuex';
+
 export default {
   components: {
   	MyHeader,
@@ -38,9 +39,7 @@ export default {
   computed:{
 
     //这里的三点叫做 : 扩展运算符
-    ...mapState({
-      show:state=>state.show
-    }),
+   ...mapState(['show']),
   }
   
 }
