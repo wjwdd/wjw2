@@ -6,11 +6,18 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
+    env: require('./dev.env'), // 使用 config/dev.env.js 中定义的编译环境
     // Paths
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-    proxyTable: {},
+    assetsSubDirectory: 'static', // 编译输出的二级目录
+    assetsPublicPath: '/', // 编译发布的根目录，可配置为资源服务器域名或 CDN 域名
+    '/api': {
+      target: 'http://jyapi.jylyjs.com', // 你要代理的域名和端口号，要加上http
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api': '/api'
+      }
+    },
+    // 需要 proxyTable 代理的接口（可跨域）
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -41,7 +48,7 @@ module.exports = {
     cacheBusting: true,
 
     cssSourceMap: true,
-   
+
   },
 
   build: {

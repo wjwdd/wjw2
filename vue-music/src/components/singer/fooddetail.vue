@@ -9,8 +9,7 @@
 </template>
 
 <script>
-import { lookOption } from '@/common/js/axous.js'
-import {mapActions,mapMutations,mapGetters,mapState} from 'vuex';
+import { lookOption,userinfor,last,shoucang} from '@/common/js/axous.js'
 
 
 export default {
@@ -26,19 +25,36 @@ export default {
          
         }
   },
-  ...mapActions(['switch_dialog','switch_dialog1']),
 	created(){
     this.get=this.$route.query.getid
     this.post1=this.$route.params.postid
     lookOption().then(res=>{
-      this.switch_dialog1()
-      console.log(res.data)
       this.msg=res.data.result.mobile
-      setTimeout(()=>{
-        this.switch_dialog()
-      },2000)
+     
     }).catch(err=>{
       console.log(err)
+    })
+    userinfor(25).then(res=>{
+     
+      console.log(res.data)
+      
+     
+    }).catch(err=>{
+      console.log(err)
+    })
+    var data={
+      type: 1,
+      city: '',
+      area: ''
+    }
+    last(data).then(res=>{
+      console.log(res.data)
+    }).catch(err=>{
+
+    })
+    
+    shoucang(25).then(res=>{
+      console.log(res.data)
     })
   },
   methods:{
