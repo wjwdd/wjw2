@@ -60,7 +60,7 @@ export default {
      showAlert() {
       this.$createDialog({
         type: 'alert',
-        title: '我是标题',
+        title: '我是标',
         content: '我是内容',
         icon: 'cubeic-alert'
       }).show()
